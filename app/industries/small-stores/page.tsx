@@ -277,49 +277,7 @@ export default function SmallStoresPage() {
               <p>Get a free consultation. No pressure. No sales pitch. Just honest advice on what will actually work for your small store.</p>
               <p className="contact-subtext">Tell us about your store and we'll show you exactly how affordable technology can save you time and money. We'll respond within 24 hours.</p>
             </div>
-            <form className="contact-form" onSubmit={(e) => {
-              e.preventDefault()
-              const formData = new FormData(e.currentTarget as HTMLFormElement)
-              const data = Object.fromEntries(formData)
-              console.log('Form submitted:', data)
-              alert('Thank you for your interest. We will contact you soon.')
-              ;(e.currentTarget as HTMLFormElement).reset()
-            }}>
-              <div className="form-group">
-                <input type="text" id="name" name="name" placeholder="Name" required />
-              </div>
-              <div className="form-group">
-                <input type="email" id="email" name="email" placeholder="Email" required />
-              </div>
-              <div className="form-group">
-                <input type="text" id="company" name="company" placeholder="Store Name" required />
-              </div>
-              <div className="form-group">
-                <select id="store-type" name="store-type" required>
-                  <option value="">What type of store do you have?</option>
-                  <option value="corner-store">Corner Store / Convenience Store</option>
-                  <option value="small-grocery">Small Grocery Store</option>
-                  <option value="neighborhood-market">Neighborhood Market</option>
-                  <option value="boutique">Boutique / Specialty Shop</option>
-                  <option value="family-owned">Family-Owned Store</option>
-                  <option value="new-store">New Store (Opening Soon)</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-              <div className="form-group">
-                <select id="store-size" name="store-size" required>
-                  <option value="">How many employees do you have?</option>
-                  <option value="1-3">Just me and 1-2 employees</option>
-                  <option value="4-10">4-10 employees</option>
-                  <option value="11-25">11-25 employees</option>
-                  <option value="25+">25+ employees</option>
-                </select>
-              </div>
-              <div className="form-group">
-                <textarea id="message" name="message" placeholder="Tell us about your store and what challenges you're facing..." rows={5} required></textarea>
-              </div>
-              <button type="submit" className="btn-primary">Get My Free Consultation - No Obligation</button>
-            </form>
+            <ContactForm />
           </div>
         </div>
       </section>
