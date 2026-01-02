@@ -426,6 +426,160 @@ body {
     letter-spacing: 0.02em;
 }
 
+/* Starter Packages */
+.starter-packages {
+    padding: var(--spacing-2xl) 0;
+    background: var(--color-bg-alt);
+    border-top: var(--border-width-thick) solid var(--color-border);
+    border-bottom: var(--border-width-thick) solid var(--color-border);
+}
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.package-card {
+    padding: var(--spacing-lg);
+    border: var(--border-width-thick) solid var(--color-border);
+    background: var(--color-bg);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.package-badge {
+    position: absolute;
+    top: -1rem;
+    right: var(--spacing-md);
+    background: var(--color-text);
+    color: var(--color-bg);
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: var(--border-width) solid var(--color-border);
+}
+
+.package-card h3 {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: 0.05em;
+}
+
+.package-description {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.4;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0.02em;
+}
+
+.package-features {
+    list-style: none;
+    margin-bottom: var(--spacing-md);
+    flex-grow: 1;
+}
+
+.package-features li {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.package-features li:last-child {
+    border-bottom: none;
+}
+
+.package-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-text);
+    font-weight: 900;
+    font-size: 1rem;
+}
+
+.package-benefit {
+    padding: var(--spacing-sm);
+    background: var(--color-bg-alt);
+    border: var(--border-width) solid var(--color-border);
+    margin-bottom: var(--spacing-md);
+    font-size: 0.9375rem;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    font-weight: 400;
+}
+
+.package-benefit strong {
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.package-card .btn-primary {
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+}
+
+/* ROI Section */
+.roi-section {
+    padding: var(--spacing-2xl) 0;
+    background: var(--color-bg);
+}
+
+.roi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.roi-item {
+    padding: var(--spacing-lg);
+    border: var(--border-width-thick) solid var(--color-border);
+    background: var(--color-bg-alt);
+    text-align: center;
+}
+
+.roi-number {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: -0.02em;
+}
+
+.roi-label {
+    font-size: 1rem;
+    font-weight: 900;
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.roi-item p {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.4;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0.02em;
+}
+
 /* Solutions */
 .solutions {
     padding: var(--spacing-2xl) 0;
@@ -599,12 +753,30 @@ body {
     gap: var(--spacing-md);
 }
 
+.industry-item-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.industry-item-link:hover .industry-item {
+    background: var(--color-text);
+    color: var(--color-bg);
+}
+
+.industry-item-link:hover .industry-item h3,
+.industry-item-link:hover .industry-item p,
+.industry-item-link:hover .industry-item li {
+    color: var(--color-bg);
+}
+
 .industry-item {
     background: var(--color-bg);
     border: var(--border-width-thick) solid var(--color-border);
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    transition: all 0.3s ease;
 }
 
 .industry-image {
@@ -1435,6 +1607,16 @@ body {
         flex-direction: column;
         align-items: stretch;
         gap: var(--spacing-sm);
+    }
+
+    .packages-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .roi-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
     }
 
     .integration-link {
