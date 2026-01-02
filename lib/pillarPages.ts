@@ -1,3 +1,5 @@
+import React from 'react'
+
 // Pillar page data
 export interface PillarSolution {
   title: string

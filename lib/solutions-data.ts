@@ -1,3 +1,5 @@
+import React from 'react'
+
 export interface SolutionItem {
   title: string
   description: string
